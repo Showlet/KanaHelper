@@ -1,132 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/black"
     tools:context="com.example.showlet.kanahelper.Main">
 
-
-    <GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="2"
-        android:rowCount="6">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <!-- Row 0 -->
+        <!--Charts label-->
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:id="@+id/lblChart"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:layout_columnSpan="2"
-
             android:text="Charts"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
 
-        <!-- Row 1 -->
-        <TextView
-            android:text="Hiragana"
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_row="1"
-            android:textColor="@color/white"/>
+            >
+            <!-- layout hiragana -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
 
+                    <!--Hiragana chart label-->
+                    <TextView
+                        android:id="@+id/lblHiraganaChart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Hiragana"
+                        android:textColor="@color/white" />
+
+                    <!--Hiragana chart button-->
+                    <ImageButton
+                        android:id="@+id/btnHiraganaChart"
+                        android:onClick="openHiraganaChart"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@id/lblHiraganaChart"
+                        android:background="@color/homeButtonColor"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        android:layout_centerHorizontal="true"
+                        app:srcCompat="@mipmap/hiragana" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1">
+
+                    <!--Hiragana chart label-->
+                    <TextView
+                        android:id="@+id/lblKatakanaChart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Katakana"
+                        android:textColor="@color/white" />
+
+                    <!--Hiragana chart button-->
+                    <ImageButton
+                        android:id="@+id/btnKatakanaChart"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@id/lblKatakanaChart"
+                        android:background="@color/homeButtonColor"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        android:layout_centerHorizontal="true"
+                        app:srcCompat="@mipmap/katakana" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        <!--Charts label-->
         <TextView
-            android:text="Katakana"
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:id="@+id/lblFlashCards"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_row="1"
-            android:textColor="@color/white"/>
+            android:text="Flash Cards"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:layout_marginTop="30dp"/>
 
-        <ImageButton
-            android:id="@+id/btnHiraganaChart"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_column="0"
-            android:layout_row="2"
-            android:background="@color/paleBlue"
-            android:padding="5dp"
-            android:layout_marginRight="20dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/hiragana" />
-
-        <ImageButton
-            android:id="@+id/btnKatakanaChart"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_column="1"
-            android:layout_row="2"
-            android:background="@color/paleBlue"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/katakana" />
-
-        <!-- Row 3 and 4 -->
-
-        <!-- Row 0 -->
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_row="3"
-            android:layout_marginTop="35dp"
-            android:layout_columnSpan="2"
-            android:text="Flash cards"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:text="Hiragana"
-            android:id="@+id/HiraganaFlashCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:layout_row="4"  />
+            <!-- layout hiragana -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-        <TextView
-            android:text="Katakana"
-            android:id="@+id/lblKatakana"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_row="4"  />
+                <!--katakana chart label-->
+                <TextView
+                    android:id="@+id/lblHiraganaFlash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Hiragana"
+                    android:textColor="@color/white" />
 
-        <ImageButton
-            android:id="@+id/btnHiraganaFlash"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_column="0"
-            android:layout_row="5"
-            android:background="@color/paleBlue"
-            android:padding="5dp"
-            android:layout_marginRight="20dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/hiragana" />
+                <!--Hiragana chart button-->
+                <ImageButton
+                    android:id="@+id/btnHiraganaFlash"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/lblHiraganaFlash"
+                    android:background="@color/homeButtonColor"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@mipmap/hiragana" />
+            </RelativeLayout>
 
-        <ImageButton
-            android:id="@+id/btnKatakanaFlash"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_column="1"
-            android:layout_row="5"
-            android:background="@color/paleBlue"
-            android:padding="5dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/katakana" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1">
 
-    </GridLayout>
-</GridLayout>
+                <!--Hiragana chart label-->
+                <TextView
+                    android:id="@+id/lblKatakanaFlash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Katakana"
+                    android:textColor="@color/white" />
+
+                <!--Hiragana chart button-->
+                <ImageButton
+                    android:id="@+id/btnKatakanaFlash"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/lblKatakanaFlash"
+                    android:background="@color/homeButtonColor"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@mipmap/katakana" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
