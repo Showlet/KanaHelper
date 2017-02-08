@@ -55,10 +55,8 @@ public class CustomGrid extends BaseAdapter {
         if (holder == null) {
             grid = inflater.inflate(R.layout.grid_single, null);
             holder = new DataHolder();
-
             holder.txt = (TextView) grid.findViewById(R.id.grid_text);
             holder.img = (ImageView) grid.findViewById(R.id.grid_image);
-
         } else {
             holder = (DataHolder) grid.getTag();
         }
