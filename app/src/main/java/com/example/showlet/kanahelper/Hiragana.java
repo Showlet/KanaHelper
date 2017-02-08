@@ -9,4 +9,8 @@ public class Hiragana extends Kana {
     public Hiragana(String syllable) {
         super(syllable);
     }
+
+    public Hiragana(String syllable, int id) {
+        super(syllable, id);
+    }
 }

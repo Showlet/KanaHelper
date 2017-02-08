@@ -1,7 +1,5 @@
 package com.example.showlet.kanahelper;
 
-import android.widget.Toast;
-
 /**
  * Created by showlet on 06/02/17.
  */
@@ -9,34 +7,40 @@ import android.widget.Toast;
 public class Chart {
 
     private Kana[] _kanas;
-
-    public Chart() {
-
-    }
-
-    public Chart(String type) {
-        switch(type) {
-            case "Hiragana":
-                _kanas = new Hiragana[Syllable.getBaslength()];
-                for (int i = 0; i < _kanas.length; ++i) {
-                    _kanas[i] = new Hiragana(Syllable._basicSyllables[i]);
-                }
-                break;
-            case "Katakana":
-                _kanas = new Katakana[Syllable.getBaslength()];
-                break;
-            default:
-                break;
-        }
-
-
-    }
+    private int[] _ids;
+    private String[] _vals;
 
     public Kana[] getKanas() {
         return _kanas;
     }
+    public int[] getIds() { return _ids;}
+    public String[] getValues() { return _vals;}
 
-    public String fillChart() {
-        return _kanas.getClass().toString();
+    public Chart() { }
+
+    public Chart(String type) {
+        int size = Syllables.getBaslength();
+        _ids = new int[size];
+        _vals = new String[size];
+
+        switch(type) {
+            case "Hiragana":
+                // Load le hiragana et ses symboles et retourne un tableau de Kana
+                _kanas = KanaLoader.loadHiraganafull();
+
+                // Sépare les deux informations
+                for (int i = 0; i < _kanas.length; ++i) {
+                    _ids[i] = _kanas[i].getID();
+                    _vals[i] = _kanas[i].getSyllable();
+                }
+                break;
+
+            case "Katakana":
+              //  _kanas = new Katakana[Syllables.getBaslength()];
+                break;
+            default:
+                break;
+        }
     }
+
 }
