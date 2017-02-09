@@ -7,4 +7,5 @@
     <color name="black">#2a2c3b</color>
     <color name="white">#fff1e6</color>
     <color name="homeButtonColor">@android:color/transparent</color>
+    <color name="gridColor">#5a0792</color>
 </resources>
