@@ -42,15 +42,14 @@ public class ChartActivity extends AppCompatActivity {
             CustomGrid adapter = new CustomGrid(ChartActivity.this, chart.getValues(), chart.getIds());
             grid = (GridView) findViewById(R.id.grid);
             grid.setAdapter(adapter);
-        grid.smoothScrollByOffset(25);
-            grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            grid.smoothScrollByOffset(25);
+        /*grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,
                                         int position, long id) {
                     Toast.makeText(ChartActivity.this, "You Clicked at " +  chart.getValues()[+position], Toast.LENGTH_SHORT).show();
-
                 }
-            });
+            }); */
     }
 }
 

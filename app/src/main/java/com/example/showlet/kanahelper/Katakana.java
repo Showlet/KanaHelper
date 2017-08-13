@@ -9,4 +9,9 @@ public class Katakana extends Kana {
     public Katakana(String syllable) {
         super(syllable);
     }
+
+    public Katakana(String syllable, int id) {
+        super(syllable, id);
+    }
+
 }

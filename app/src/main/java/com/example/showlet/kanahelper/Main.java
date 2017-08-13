@@ -20,4 +20,10 @@ public class Main extends AppCompatActivity {
         myIntent.putExtra("Type", "Hiragana"); //Optional parameters
         this.startActivity(myIntent);
     }
+
+    protected void openKatakanaChart(View view) {
+        Intent myIntent = new Intent(this, ChartActivity.class);
+        myIntent.putExtra("Type", "Katakana"); //Optional parameters
+        this.startActivity(myIntent);
+    }
 }

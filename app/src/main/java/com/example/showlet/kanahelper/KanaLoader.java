@@ -35,5 +35,33 @@ public final class KanaLoader {
 
         return arr;
     }
+
+    protected static Katakana[] loadKatakanafull() {
+
+        // fetch les ressources
+        // Algorithme qui remplis un array de tous les kanas
+        // du type désiré
+        int nbSymbol = Syllables.getBaslength();
+        int index = 0;
+        int[] symbolRess = new int[nbSymbol];   // Array pour stoquer les images de kana
+        Field[] ID_Fields = R.drawable.class.getFields();   // Array de toutes les ressources drawable
+        for (int i = 1; i < ID_Fields.length; i++) {
+            try {
+                if (ID_Fields[i].toString().contains("katakana")) {
+                    symbolRess[index] = (int) ID_Fields[i].getInt(null);
+                    ++index;
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+        Katakana[] arr = new Katakana[nbSymbol];
+        for (int i = 0; i < symbolRess.length; ++i){
+            arr[i] = new Katakana(Syllables.basicSyllables[i], symbolRess[i]);
+        }
+
+        return arr;
+    }
 }
 

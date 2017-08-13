@@ -37,6 +37,13 @@ public class Chart {
 
             case "Katakana":
               //  _kanas = new Katakana[Syllables.getBaslength()];
+                _kanas = KanaLoader.loadKatakanafull();
+
+                // Sépare les deux informations
+                for (int i = 0; i < _kanas.length; ++i) {
+                    _ids[i] = _kanas[i].getID();
+                    _vals[i] = _kanas[i].getSyllable();
+                }
                 break;
             default:
                 break;

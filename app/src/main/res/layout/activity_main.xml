@@ -15,66 +15,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
         android:orientation="vertical">
-
-        <!--Charts label-->
-        <TextView
-            android:id="@+id/lblChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Charts"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="35dp"
-            android:layout_marginBottom="20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
-            <!-- layout hiragana -->
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <!--Hiragana chart button-->
-                    <ImageButton
-                        android:id="@+id/btnHiraganaChart"
-                        android:onClick="openHiraganaChart"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-
-                        android:background="@color/homeButtonColor"
-                        android:padding="5dp"
-                        android:scaleType="fitCenter"
-                        android:layout_centerHorizontal="true"
-                        app:srcCompat="@drawable/icon2"/>
-                    <!--Hiragana chart label-->
-                    <TextView
-                        android:id="@+id/lblHiraganaChart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@id/btnHiraganaChart"
-                        android:text="Hiragana"
-                        android:textColor="@color/white"
-                        android:textSize="18dp"
-                        android:layout_marginBottom="5dp"/>
-                </RelativeLayout>
+            android:layout_weight="1"
+            android:layout_gravity="right">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_weight="1">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                     <!--Hiragana chart button-->
                     <ImageButton
                         android:id="@+id/btnKatakanaChart"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
+                        android:layout_width="175dp"
+                        android:layout_height="175dp"
+                        android:onClick="openKatakanaChart"
                         android:background="@color/homeButtonColor"
                         android:padding="5dp"
                         android:scaleType="fitCenter"
@@ -88,86 +46,39 @@
                         android:layout_centerHorizontal="true"
                         android:layout_below="@id/btnKatakanaChart"
                         android:text="Katakana"
-                        android:textSize="18dp"
+                        android:textSize="24dp"
                         android:textColor="@color/white" />
                 </RelativeLayout>
             </LinearLayout>
-
-        <!--Charts label-->
-        <TextView
-            android:id="@+id/lblFlashCards"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Flash Cards"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="35dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="30dp"/>
+            android:layout_gravity="right"
+            android:layout_weight="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <!-- layout hiragana -->
-            <RelativeLayout
+            <!--Hiragana chart button-->
+            <ImageButton
+                android:id="@+id/btnHiraganaChart"
+                android:onClick="openHiraganaChart"
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+
+                android:background="@color/homeButtonColor"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/icon2"/>
+            <!--Hiragana chart label-->
+            <TextView
+                android:id="@+id/lblHiraganaChart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <!--Hiragana chart button-->
-                <ImageButton
-                    android:id="@+id/btnHiraganaFlash"
-                    android:onClick="openHiraganaChart"
-                    android:layout_width="125dp"
-                    android:layout_height="125dp"
-
-                    android:background="@color/homeButtonColor"
-                    android:padding="5dp"
-                    android:scaleType="fitCenter"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/icon2"/>
-                <!--Hiragana chart label-->
-                <TextView
-                    android:id="@+id/lblHiraganaFlash"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/btnHiraganaFlash"
-                    android:text="Hiragana"
-                    android:textColor="@color/white"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="5dp"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_weight="1">
-
-                <!--Hiragana chart button-->
-                <ImageButton
-                    android:id="@+id/btnKatakanaFlash"
-                    android:layout_width="125dp"
-                    android:layout_height="125dp"
-                    android:background="@color/homeButtonColor"
-                    android:padding="5dp"
-                    android:scaleType="fitCenter"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/icon3" />
-                <!--Hiragana chart label-->
-                <TextView
-                    android:id="@+id/lblKatakanaFlash"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/btnKatakanaFlash"
-                    android:text="Katakana"
-                    android:textSize="18dp"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
-        </LinearLayout>
-
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/btnHiraganaChart"
+                android:text="Hiragana"
+                android:textColor="@color/white"
+                android:textSize="24dp"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
